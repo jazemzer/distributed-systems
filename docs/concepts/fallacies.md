@@ -7,7 +7,7 @@ Calls over network can fail for various reasons. Therefore,
 * Do **automatic retries** with **idempotency**
 * Implement **store and forward pattern** with queues
 
-![Store and forward pattern](/images/store-and-forward.svg)
+![Store and forward pattern](../images/store-and-forward.svg)
 
 ## Latency is zero
 
@@ -61,10 +61,10 @@ In a complex system, it is impossible for one person to know everything. Therefo
 
 ## Transport cost is zero
 
-Transporting data over network has a price both in time and resources. Time because serialization and deserialization involve CPU time and cost because of the infrastructure needed for transport. Therefore, 
+Transporting data over network has a price both in time and resources. Serializing and deserializing data for transport involves CPU time and network infrastructure involves atleast a maintenance cost. Therefore, 
 
-* Choose format wisely based on cost 
-	* XML > JSON > ProtoBuf
+* Choose the transport format wisely
+	* XML > JSON > ProtoBuf (in the order decreasing cost)
 
 ## Network is homogeneous
  
@@ -73,6 +73,8 @@ Having a homogeneous network is impossible to achieve. Therefore,
 * Avoid vendor lock-in with proprietary protocols
 * Choose standard formats for communication - Json, XML, etc
 
-## References
+---
+**References**
+
 * [Understanding the 8 Fallacies of Distributed Systems - Dzone](https://dzone.com/articles/understanding-the-8-fallacies-of-distributed-syste)
 * [Whitepaper - Arnon Rotem-Gal-Oz](https://www.rgoarchitects.com/Files/fallacies.pdf)
