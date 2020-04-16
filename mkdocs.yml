@@ -1,4 +1,13 @@
-site_name: System Design Notes
+site_name: Distributed System Design
 theme:
   name: material
+  feature:
+    tabs: true
+use_directory_urls: false
+markdown_extensions:
+  - plantuml_markdown
 google_analytics: ['UA-163807440-1', 'jazemzer.github.io']
+
+nav:
+  - 'Fundamental Concepts':
+      - 'Fallacies of Distributed Computing': 'concepts/fallacies.md'

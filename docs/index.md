@@ -1,17 +1,8 @@
-# Welcome to MkDocs
+# Welcome here!
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+I'm not an expert in systems design but I've lately started reading more about designing distributed systems. And this site is an attempt to document my notes both for sharing and future reference. 
 
-## Commands
+As I begin this journey, though I have a list of topics to cover, I don't have a concrete structure in my mind to organize these notes. But I hope over time I should be able to find a structure and reorganize them.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## TODO:
+https://www.enterpriseintegrationpatterns.com/patterns/messaging/Introduction.html
