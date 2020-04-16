@@ -323,13 +323,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#references" title="References" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
       
       
       
@@ -422,13 +415,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#references" title="References" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
       
       
       
@@ -453,7 +439,7 @@
 <li>Do <strong>automatic retries</strong> with <strong>idempotency</strong></li>
 <li>Implement <strong>store and forward pattern</strong> with queues</li>
 </ul>
-<p><img alt="Store and forward pattern" src="/images/store-and-forward.svg" /></p>
+<p><img alt="Store and forward pattern" src="../images/store-and-forward.svg" /></p>
 <h2 id="latency-is-zero">Latency is zero</h2>
 <p>Sending data across a network is multiple orders of magnitude slower than making a local method call. Therefore,</p>
 <ul>
@@ -508,10 +494,10 @@
 <li>Isolate/Abstract 3rd party systems</li>
 </ul>
 <h2 id="transport-cost-is-zero">Transport cost is zero</h2>
-<p>Transporting data over network has a price both in time and resources. Time because serialization and deserialization involve CPU time and cost because of the infrastructure needed for transport. Therefore, </p>
+<p>Transporting data over network has a price both in time and resources. Serializing and deserializing data for transport involves CPU time and network infrastructure involves atleast a maintenance cost. Therefore, </p>
 <ul>
-<li>Choose format wisely based on cost <ul>
-<li>XML &gt; JSON &gt; ProtoBuf</li>
+<li>Choose the transport format wisely<ul>
+<li>XML &gt; JSON &gt; ProtoBuf (in the order decreasing cost)</li>
 </ul>
 </li>
 </ul>
@@ -521,7 +507,8 @@
 <li>Avoid vendor lock-in with proprietary protocols</li>
 <li>Choose standard formats for communication - Json, XML, etc</li>
 </ul>
-<h2 id="references">References</h2>
+<hr />
+<p><strong>References</strong></p>
 <ul>
 <li><a href="https://dzone.com/articles/understanding-the-8-fallacies-of-distributed-syste">Understanding the 8 Fallacies of Distributed Systems - Dzone</a></li>
 <li><a href="https://www.rgoarchitects.com/Files/fallacies.pdf">Whitepaper - Arnon Rotem-Gal-Oz</a></li>
