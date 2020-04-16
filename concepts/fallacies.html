@@ -1,0 +1,569 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Fallacies of Distributed Computing - Distributed System Design</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-163807440-1", "jazemzer.github.io")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#fallacies-of-distributed-computing" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Distributed System Design" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Distributed System Design
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Fallacies of Distributed Computing
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="fallacies.html" title="Fundamental Concepts" class="md-tabs__link md-tabs__link--active">
+          Fundamental Concepts
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Distributed System Design" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Distributed System Design
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Fundamental Concepts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Fundamental Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Fallacies of Distributed Computing
+      </label>
+    
+    <a href="fallacies.html" title="Fallacies of Distributed Computing" class="md-nav__link md-nav__link--active">
+      Fallacies of Distributed Computing
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-is-reliable" title="Network is reliable" class="md-nav__link">
+    Network is reliable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latency-is-zero" title="Latency is zero" class="md-nav__link">
+    Latency is zero
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bandwidth-is-infinite" title="Bandwidth is infinite" class="md-nav__link">
+    Bandwidth is infinite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-is-secure" title="Network is secure" class="md-nav__link">
+    Network is secure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology-doesnt-change" title="Topology doesn’t change" class="md-nav__link">
+    Topology doesn’t change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#there-is-one-administrator" title="There is one administrator" class="md-nav__link">
+    There is one administrator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transport-cost-is-zero" title="Transport cost is zero" class="md-nav__link">
+    Transport cost is zero
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-is-homogeneous" title="Network is homogeneous" class="md-nav__link">
+    Network is homogeneous
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-is-reliable" title="Network is reliable" class="md-nav__link">
+    Network is reliable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latency-is-zero" title="Latency is zero" class="md-nav__link">
+    Latency is zero
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bandwidth-is-infinite" title="Bandwidth is infinite" class="md-nav__link">
+    Bandwidth is infinite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-is-secure" title="Network is secure" class="md-nav__link">
+    Network is secure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology-doesnt-change" title="Topology doesn’t change" class="md-nav__link">
+    Topology doesn’t change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#there-is-one-administrator" title="There is one administrator" class="md-nav__link">
+    There is one administrator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transport-cost-is-zero" title="Transport cost is zero" class="md-nav__link">
+    Transport cost is zero
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-is-homogeneous" title="Network is homogeneous" class="md-nav__link">
+    Network is homogeneous
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="fallacies-of-distributed-computing">Fallacies of Distributed Computing</h1>
+<h2 id="network-is-reliable">Network is reliable</h2>
+<p>Calls over network can fail for various reasons. Therefore,</p>
+<ul>
+<li>Do <strong>automatic retries</strong> with <strong>idempotency</strong></li>
+<li>Implement <strong>store and forward pattern</strong> with queues</li>
+</ul>
+<p><img alt="Store and forward pattern" src="/images/store-and-forward.svg" /></p>
+<h2 id="latency-is-zero">Latency is zero</h2>
+<p>Sending data across a network is multiple orders of magnitude slower than making a local method call. Therefore,</p>
+<ul>
+<li>Avoid chatty network communication by bringing all the data at once</li>
+<li>Avoid <a href="https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping">Select N+1</a> problem by keeping remote calls coarse-grained</li>
+<li>Move the data closer to client - CDNs &amp; Caching</li>
+<li>Invert flow of data - use pub/sub model with local storage</li>
+</ul>
+<h2 id="bandwidth-is-infinite">Bandwidth is infinite</h2>
+<p>Mobile and video streaming apps are sensitive to high bandwidth usage. Therefore,</p>
+<ul>
+<li>Use Domain driven design<ul>
+<li>Don't strive for single enterprise domain model but rather partition domain model into <a href="https://martinfowler.com/bliki/BoundedContext.html">BoundedContexts</a></li>
+<li>Avoid large object graph inside bounded contexts by using <a href="https://martinfowler.com/bliki/DDD_Aggregate.html">Aggregate pattern</a></li>
+</ul>
+</li>
+<li>Use CQRS - <a href="https://martinfowler.com/bliki/CQRS.html">Command Query Responsibility Separation</a><ul>
+<li>Optimize read and write with separate models</li>
+</ul>
+</li>
+</ul>
+<h2 id="network-is-secure">Network is secure</h2>
+<p>Since security cannot be an afterthought, </p>
+<ul>
+<li>Do layered defense at different levels - network, application, storage</li>
+<li>Handle <a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a> vulnerabilities</li>
+<li>Implement threat modelling <ul>
+<li>identify assets and access patterns </li>
+<li>identify possible attacks and execute them</li>
+</ul>
+</li>
+</ul>
+<h2 id="topology-doesnt-change">Topology doesn’t change</h2>
+<p>Since network topology changes all the time, we need to</p>
+<ul>
+<li>Abstract physical network<ul>
+<li>Don’t hardcode IPs - use DNS</li>
+<li>Use service discovery when IP and port are needed</li>
+<li>Use Service bus or multi cast for location transparency</li>
+</ul>
+</li>
+<li>Treat servers as Cattle, Not pets</li>
+<li>Implement Chaos monkey</li>
+</ul>
+<h2 id="there-is-one-administrator">There is one administrator</h2>
+<p>In a complex system, it is impossible for one person to know everything. Therefore, </p>
+<ul>
+<li>Implement Centralized logging &amp; monitoring</li>
+<li>Involve administrators early to spot production constraints (security, firewall, configurations)</li>
+<li>Decouple systems with queues</li>
+<li>Implement backward-compatible connections to allow for independent component upgrades</li>
+<li>Isolate/Abstract 3rd party systems</li>
+</ul>
+<h2 id="transport-cost-is-zero">Transport cost is zero</h2>
+<p>Transporting data over network has a price both in time and resources. Time because serialization and deserialization involve CPU time and cost because of the infrastructure needed for transport. Therefore, </p>
+<ul>
+<li>Choose format wisely based on cost <ul>
+<li>XML &gt; JSON &gt; ProtoBuf</li>
+</ul>
+</li>
+</ul>
+<h2 id="network-is-homogeneous">Network is homogeneous</h2>
+<p>Having a homogeneous network is impossible to achieve. Therefore,</p>
+<ul>
+<li>Avoid vendor lock-in with proprietary protocols</li>
+<li>Choose standard formats for communication - Json, XML, etc</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://dzone.com/articles/understanding-the-8-fallacies-of-distributed-syste">Understanding the 8 Fallacies of Distributed Systems - Dzone</a></li>
+<li><a href="https://www.rgoarchitects.com/Files/fallacies.pdf">Whitepaper - Arnon Rotem-Gal-Oz</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
