@@ -57,9 +57,9 @@
 
 * [Update numbers - Medium](https://medium.com/@kousiknath/must-know-numbers-for-every-computer-engineer-6338a12c292c)
 * [Interactive timeline ](https://colin-scott.github.io/personal_website/research/interactive_latency.html)
-
-* [World population](https://www.worldometers.info/world-population/)
-* [Mobile Phone statistics](https://www.bankmycell.com/blog/how-many-phones-are-in-the-world)
-* [Internet statistics](https://www.statista.com/statistics/617136/digital-population-worldwide/)
-* [Social network statistics](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/)
-* [Social media statistics](https://dustinstout.com/social-media-statistics/)
+* Statistics
+	* [World population](https://www.worldometers.info/world-population/)
+	* [Mobile Phone statistics](https://www.bankmycell.com/blog/how-many-phones-are-in-the-world)
+	* [Internet statistics](https://www.statista.com/statistics/617136/digital-population-worldwide/)
+	* [Social network statistics](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/)
+	* [Social media statistics](https://dustinstout.com/social-media-statistics/)
