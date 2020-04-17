@@ -12,3 +12,5 @@ nav:
   - 'Fundamental Concepts':
       - 'Fallacies of Distributed Computing': 'concepts/fallacies.md'
       - 'Numbers everyone should know': 'concepts/numbers.md'
+  - 'System Design Interviews':
+      - 'Useful numbers': 'sdi/numbers.md'
