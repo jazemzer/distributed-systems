@@ -11,3 +11,4 @@ google_analytics: ['UA-163807440-1', 'jazemzer.github.io']
 nav:
   - 'Fundamental Concepts':
       - 'Fallacies of Distributed Computing': 'concepts/fallacies.md'
+      - 'Numbers everyone should know': 'concepts/numbers.md'
