@@ -13,6 +13,7 @@ nav:
       - 'Fallacies of Distributed Computing': 'concepts/fallacies.md'
       - 'Numbers everyone should know': 'concepts/numbers.md'
       - 'HTTP/2': 'concepts/http2.md'
+      - 'Website Performance': 'concepts/web-perf.md'
   - 'System Design Interviews':
       - 'Useful numbers': 'sdi/numbers.md'
   - 'Books':

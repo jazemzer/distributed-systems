@@ -11,7 +11,7 @@
 	* Cookie
 
 
-## How was limitations of HTTP/1.1 handled?
+## How did applications handle HTTP/1.1 limitations?
 * Head of line blocking was worked around by [domain sharding](https://www.keycdn.com/support/domain-sharding)
 * Using CSS sprites that combine multiple images into a single one so that they're loaded in a single HTTP request
 * Inlining JS and CSS
@@ -21,48 +21,29 @@
 ## How is HTTP/2 better than HTTP/1.1
 
 * HTTP/2 is a single TLS encrypted connection
-* Request/Response are a logical stream. These streams are chopped into header and data frames and multiplexed on the same connection avoiding head of line blocking
+* Request/Response are a logical stream. Each streams is chunked into header and data frames and multiplexed on the same connection avoiding head of line blocking
 * Headers are heavily compressed (HPack) to benefit repeated http requests
 * Server push
 
-## Best practices of Web performance
+### 1. Framing in HTTP/2
+![HTTP/2 Message stream](https://developers.google.com/web/fundamentals/performance/http2/images/streams_messages_frames01.svg)
 
-* Optimize DNS Lookups
-	* Limit the number of unique domain names
-	* Ensure low DNS resolution latencies
-	* Leverage [DNS pre-fetch](https://developer.mozilla.org/en-US/docs/Web/Performance/dns-prefetch)
-* Optimie TCP connections
-	* Leverage [Preconnect](https://www.keycdn.com/support/preconnect) which sets up early connections before an HTTP request is actually sent to the server
-	* Use a CDN closer to user. This indirectly reduces the RTT for the TCP connection
-	* Implement latest [TLS best practices](https://istlsfastyet.com/)
-	* Avoid Redirects - that usually causes connection to new hostnames
-* Cache on client - TTL
-	* Cache images forever
-	* CSS/JS - cache for twice the median session time so it is relatively fresh
-* Use conditional caching
-	* Using [ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) that uniquely identifies the object so server can return HTTP 304 if it is requested again
-	* Using [If-modified-since](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since) in http request so server can return HTTP 304
-* Compression and Minification
-	* All text content (Html,JS,CSS,Json) benefit from compresison - gzip, deflate
-* Avoid Blocking CSS/JS
-	* Add all the CSS elements in the head section
-	* Use 'async' attribute for JS than be downloaded parallely while HTML is being parsed but before the DOM is loaded
-	* Use 'defer' attribute for JS that can be run after DOM is loaded
-* Optimize Images
-	* Remove metadata like location, timestamp, image dimension, resolution 
-	* Scaling images for different viewport
+### 2. Stream Multiplexing
+![Stream Multiplexing](https://developers.google.com/web/fundamentals/performance/http2/images/multiplexing01.svg)
 
+### 3. Header Compression
+Uses Huffman Coding
+![Header compression](https://developers.google.com/web/fundamentals/performance/http2/images/header_compression01.svg)
 
-## Anitpatterns with HTTP/2
-* Domain Sharding as that creates multiple TCP connections 
-* CSS Spriting
-* Concatenation of files
-* Inlining 
-
+### 4. Server push
+![Server push](https://developers.google.com/web/fundamentals/performance/http2/images/push01.svg)
 
 ---
 
 **References**
 
-* [HTTP/2 101 video - Chrome Dev summit](https://www.youtube.com/watch?v=r5oT_2ndjms)
-* [HTTP Data size](https://httparchive.org/reports/state-of-the-web)
+* [HTTP/2 101 - Chrome Dev summit](https://www.youtube.com/watch?v=r5oT_2ndjms) (video)
+* [HTTP/2 performance - Google](https://developers.google.com/web/fundamentals/performance/http2)
+* [Learning HTTP/2 - Oreilly](http://shop.oreilly.com/product/0636920052326.do) (book)
+
+

@@ -52,4 +52,4 @@ Size of a data packet = 14bytes
 	* [Internet statistics](https://www.statista.com/statistics/617136/digital-population-worldwide/)
 	* [Social network statistics](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/)
 	* [Social media statistics](https://dustinstout.com/social-media-statistics/)
-	* [HTTP Data size](https://httparchive.org/reports/state-of-the-web)
+	* [HTTP usage statistics](https://httparchive.org/reports/state-of-the-web)

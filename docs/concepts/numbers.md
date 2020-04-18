@@ -19,10 +19,9 @@
 | Disk (Hard drive / magnetic drive) seek		| 2,000,000	| 2,000		|2 	|4xdata center round trip|
 | Packet roundtrip from CA to Netherlands		| 150,000,000| 150,000	|150|				|
 
-
 ---
 
 **References**
 
-* [Update numbers - Medium](https://medium.com/@kousiknath/must-know-numbers-for-every-computer-engineer-6338a12c292c)
 * [Interactive timeline ](https://colin-scott.github.io/personal_website/research/interactive_latency.html)
+* [Updated numbers - Medium](https://medium.com/@kousiknath/must-know-numbers-for-every-computer-engineer-6338a12c292c)
