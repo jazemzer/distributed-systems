@@ -28,6 +28,19 @@
 | Reddit 					|300 million |
 | Twitter 					|300 million |
 
+## Basic numbers
+| Description				| Quantity		|
+| ------------------------- | ------------- |
+| No of seconds in a day 	| 86400 		|
+| No of seconds in a year 	| 31 million 	|
+
+\~1million req/day = \~11.5req/sec
+
+Average Web page size is 2MB with an average of 100 objects
+
+Blink of an eye = 300-400 milli secs. Google study says that much delay causes people to search less
+
+Size of a data packet = 14bytes
 
 ---
 
@@ -39,3 +52,4 @@
 	* [Internet statistics](https://www.statista.com/statistics/617136/digital-population-worldwide/)
 	* [Social network statistics](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/)
 	* [Social media statistics](https://dustinstout.com/social-media-statistics/)
+	* [HTTP Data size](https://httparchive.org/reports/state-of-the-web)

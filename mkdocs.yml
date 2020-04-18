@@ -12,5 +12,8 @@ nav:
   - 'Fundamental Concepts':
       - 'Fallacies of Distributed Computing': 'concepts/fallacies.md'
       - 'Numbers everyone should know': 'concepts/numbers.md'
+      - 'HTTP/2': 'concepts/http2.md'
   - 'System Design Interviews':
       - 'Useful numbers': 'sdi/numbers.md'
+  - 'Books':
+      - 'Designing data intensive applications': 'books/ddia.md'
