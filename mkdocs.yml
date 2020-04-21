@@ -6,10 +6,11 @@ theme:
 use_directory_urls: false
 markdown_extensions:
   - plantuml_markdown
-google_analytics: ['UA-163807440-1', 'jazemzer.github.io']
+google_analytics: ['UA-163807440-1', 'jazemzer.github.io/distributed-systems']
 
 nav:
   - 'Fundamental Concepts':
+      - 'Networking 101': 'concepts/networking101.md'
       - 'Fallacies of Distributed Computing': 'concepts/fallacies.md'
       - 'Numbers everyone should know': 'concepts/numbers.md'
       - 'HTTP/2': 'concepts/http2.md'

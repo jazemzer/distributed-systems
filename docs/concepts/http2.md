@@ -45,5 +45,5 @@ Uses Huffman Coding
 * [HTTP/2 101 - Chrome Dev summit](https://www.youtube.com/watch?v=r5oT_2ndjms) (video)
 * [HTTP/2 performance - Google](https://developers.google.com/web/fundamentals/performance/http2)
 * [Learning HTTP/2 - Oreilly](http://shop.oreilly.com/product/0636920052326.do) (book)
-
+* [High Performance Browser Networking - Chapter](https://hpbn.co/http2/) (book)
 
