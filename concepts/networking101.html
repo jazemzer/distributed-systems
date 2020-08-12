@@ -15,7 +15,7 @@
     
     
       
-        <title>Website Performance - Distributed System Design</title>
+        <title>Networking 101 - Distributed System Design</title>
       
     
     
@@ -53,7 +53,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#website-performance" class="md-skip">
+        <a href="#networking-101" class="md-skip">
           Skip to content
         </a>
       
@@ -81,7 +81,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Website Performance
+              Networking 101
             
           </span>
         </div>
@@ -180,11 +180,174 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="networking101.html" title="Networking 101" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Networking 101
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="networking101.html" title="Networking 101" class="md-nav__link md-nav__link--active">
       Networking 101
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ip-address-exhaustion-solution" class="md-nav__link">
+    Ip Address Exhaustion Solution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speed-is-a-feature" class="md-nav__link">
+    Speed is a feature
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    TCP
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-way-handshake" class="md-nav__link">
+    Three-way Handshake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#congestion-avoidance-and-control" class="md-nav__link">
+    Congestion Avoidance and Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-philosophy-of-darpa-internet-protocols" class="md-nav__link">
+    Design Philosophy of DARPA Internet Protocols
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Philosophy of DARPA Internet Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fundamental-goal" class="md-nav__link">
+    Fundamental Goal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-goals" class="md-nav__link">
+    Secondary goals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-argument" class="md-nav__link">
+    End-to-End Argument
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-bridging" class="md-nav__link">
+    Switching &amp; Bridging
+  </a>
+  
+    <nav class="md-nav" aria-label="Switching &amp; Bridging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-hosts-find-each-other-on-the-network" class="md-nav__link">
+    Host hosts find each other on the network
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intradomain-routing" class="md-nav__link">
+    Intradomain routing
+  </a>
+  
+    <nav class="md-nav" aria-label="Intradomain routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distance-vector-routing" class="md-nav__link">
+    Distance-Vector routing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -228,60 +391,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Website Performance
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="web-perf.html" title="Website Performance" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="web-perf.html" title="Website Performance" class="md-nav__link">
       Website Performance
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices-of-web-performance" class="md-nav__link">
-    Best practices of Web performance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anitpatterns-with-http2" class="md-nav__link">
-    Anitpatterns with HTTP/2
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -400,16 +514,130 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#best-practices-of-web-performance" class="md-nav__link">
-    Best practices of Web performance
+  <a href="#ip-address-exhaustion-solution" class="md-nav__link">
+    Ip Address Exhaustion Solution
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#anitpatterns-with-http2" class="md-nav__link">
-    Anitpatterns with HTTP/2
+  <a href="#speed-is-a-feature" class="md-nav__link">
+    Speed is a feature
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    TCP
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-way-handshake" class="md-nav__link">
+    Three-way Handshake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#congestion-avoidance-and-control" class="md-nav__link">
+    Congestion Avoidance and Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-philosophy-of-darpa-internet-protocols" class="md-nav__link">
+    Design Philosophy of DARPA Internet Protocols
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Philosophy of DARPA Internet Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fundamental-goal" class="md-nav__link">
+    Fundamental Goal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-goals" class="md-nav__link">
+    Secondary goals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-argument" class="md-nav__link">
+    End-to-End Argument
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-bridging" class="md-nav__link">
+    Switching &amp; Bridging
+  </a>
+  
+    <nav class="md-nav" aria-label="Switching &amp; Bridging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-hosts-find-each-other-on-the-network" class="md-nav__link">
+    Host hosts find each other on the network
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intradomain-routing" class="md-nav__link">
+    Intradomain routing
+  </a>
+  
+    <nav class="md-nav" aria-label="Intradomain routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distance-vector-routing" class="md-nav__link">
+    Distance-Vector routing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -429,61 +657,197 @@
                   
                 
                 
-                <h1 id="website-performance">Website Performance</h1>
-<h2 id="best-practices-of-web-performance">Best practices of Web performance</h2>
+                <h1 id="networking-101">Networking 101</h1>
+<p><a href="https://www.youtube.com/watch?v=BQFprTs2Gso">History of Internet</a> (video)</p>
+<h2 id="ip-address-exhaustion-solution">Ip Address Exhaustion Solution</h2>
+<p>Class based network</p>
 <ul>
-<li>Optimize DNS Lookups<ul>
-<li>Limit the number of unique domain names</li>
-<li>Ensure low DNS resolution latencies</li>
-<li>Leverage <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/dns-prefetch">DNS pre-fetch</a></li>
+<li>Class A - 16 million = 2^24</li>
+<li>Class B - 65,536</li>
+<li>Class C - 256</li>
 </ul>
-</li>
-<li>Optimie TCP connections<ul>
-<li>Leverage <a href="https://www.keycdn.com/support/preconnect">Preconnect</a> which sets up early connections before an HTTP request is actually sent to the server</li>
-<li>Use a CDN closer to user. This indirectly reduces the RTT for the TCP connection</li>
-<li>Implement latest <a href="https://istlsfastyet.com/">TLS best practices</a></li>
-<li>Avoid Redirects - that usually causes connection to new hostnames</li>
-</ul>
-</li>
-<li>Cache on client - TTL<ul>
-<li>Cache images forever</li>
-<li>CSS/JS - cache for twice the median session time so it is relatively fresh</li>
-</ul>
-</li>
-<li>Use conditional caching<ul>
-<li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETag</a> that uniquely identifies the object so server can return HTTP 304 if it is requested again</li>
-<li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since">If-modified-since</a> in http request so server can return HTTP 304</li>
-</ul>
-</li>
-<li>Compression and Minification<ul>
-<li>All text content (Html,JS,CSS,Json) benefit from compresison - gzip, deflate</li>
-</ul>
-</li>
-<li>Avoid Blocking CSS/JS<ul>
-<li>Add all the CSS elements in the head section</li>
-<li>Use 'async' attribute for JS than be downloaded parallely while HTML is being parsed but before the DOM is loaded</li>
-<li>Use 'defer' attribute for JS that can be run after DOM is loaded</li>
-</ul>
-</li>
-<li>Optimize Images<ul>
-<li>Remove metadata like location, timestamp, image dimension, resolution </li>
-<li>Scaling images for different viewport</li>
-</ul>
-</li>
-</ul>
-<h2 id="anitpatterns-with-http2">Anitpatterns with HTTP/2</h2>
+<p>Possible solutions:</p>
 <ul>
-<li>Domain Sharding as that creates multiple TCP connections </li>
-<li>CSS Spriting</li>
-<li>Concatenation of files</li>
-<li><a href="https://hpbn.co/http1x/#resource-inlining">Inlining</a> </li>
+<li>NAT - Having private address</li>
+<li>CIDR - Classless Inter domain routing</li>
+<li>Reclaim addresses</li>
+<li>IPv6 - 128 bit addresses = </li>
 </ul>
+<h2 id="speed-is-a-feature">Speed is a feature</h2>
+<table>
+<thead>
+<tr>
+<th>Delay</th>
+<th>User perception</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–100 ms</td>
+<td>Instant</td>
+</tr>
+<tr>
+<td>100–300 ms</td>
+<td>Small perceptible delay</td>
+</tr>
+<tr>
+<td>300–1000 ms</td>
+<td>Machine is working</td>
+</tr>
+<tr>
+<td>1,000+ ms</td>
+<td>Likely mental context switch</td>
+</tr>
+<tr>
+<td>10,000+ ms</td>
+<td>Task is abandoned</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://hpbn.co/primer-on-web-performance/#speed-performance-and-human-perception">source</a></p>
+<p>Because faster sites mean</p>
+<ul>
+<li>better user engagement</li>
+<li>better user retention</li>
+<li>better conversion</li>
+</ul>
+<blockquote>
+<p>Transatlantic cable "<a href="https://en.wikipedia.org/wiki/Hibernia_Express">Hibernia Express</a>" was laid between London and NewYork to give an edge of <code>~5 milliseconds</code> over other transatlantic cables</p>
+</blockquote>
+<p><img alt="Bandwidth &amp; Latency" src="https://hpbn.co/assets/diagrams/9f12afe5ca29ba5c2ad555fcee5bd568.svg" /></p>
+<p>Latency is caused by</p>
+<ul>
+<li><strong>Propogation delay</strong> = distance/speed of medium(light)</li>
+<li><strong>Transmission delay</strong> = time required to push all data bits into the link<ul>
+<li>Transmitting 10MB data over 100Mbps link would be faster (0.8 sec) than sending it over 1Mbps link (80 sec). 10MB = 80Mb</li>
+</ul>
+</li>
+<li><strong>Processing delay</strong> = time taken by router to process the packet header, check for bit-level errors and determine packet's destination</li>
+<li><strong>Queuing delay</strong> = time the packet waits in router's incoming buffer before it can be processed</li>
+</ul>
+<p>Refractive Index = Speed of light / Speed of light in the medium</p>
+<p>Eg., Refractive index of Optical fiber is \~1.4. Therefore, maximum speed of light in optical fiber = 200,000,000 m/sec</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Distance</th>
+<th>Latency</th>
+<th>RTT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NewYork to SanFrancisco</td>
+<td>~4000km</td>
+<td>~20ms</td>
+<td>~40ms</td>
+</tr>
+<tr>
+<td>NewYork to Amsterdam</td>
+<td>~6000km</td>
+<td>~30ms</td>
+<td>~60ms</td>
+</tr>
+<tr>
+<td>NewYork to Sydney</td>
+<td>~16000km</td>
+<td>~80ms</td>
+<td>~160ms</td>
+</tr>
+<tr>
+<td>Earth's Circumference</td>
+<td>~40000km</td>
+<td>~200ms</td>
+<td>~200ms</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../images/NY-AMS.png" />
+<img alt="" src="../images/NY-SYD.png" /></p>
+<h2 id="tcp">TCP</h2>
+<p>TCP provides an effective abstraction of a reliable network running over an unreliable channel. It hides most of the complexity of network communication from our applications: 
+* retransmission of lost data
+* in-order delivery 
+* congestion control and avoidance
+* data integrity
+* and more</p>
+<p>TCP is optimized for accurate delivery, rather than a timely one.</p>
+<h3 id="three-way-handshake">Three-way Handshake</h3>
+<p><img alt="" src="https://hpbn.co/assets/diagrams/eefa1170a673da0140efe1ece7a2884b.svg" />
+Thus, each new connection will have a full roundtrip of latency before any application data can be transferred.</p>
+<h3 id="congestion-avoidance-and-control">Congestion Avoidance and Control</h3>
+<h3 id="design-philosophy-of-darpa-internet-protocols">Design Philosophy of DARPA Internet Protocols</h3>
+<p><a href="http://ccr.sigcomm.org/archive/1995/jan95/ccr-9501-clark.pdf">source</a></p>
+<h4 id="fundamental-goal">Fundamental Goal</h4>
+<ul>
+<li>Effective technique for multiplexed utilization of existing interconnected networks (ARPANET, PRNET)<ul>
+<li>Sharing/multiplexing was solved with Packed switching</li>
+<li>Interconnection was solved with <code>narrow waist</code></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://i.pinimg.com/originals/7c/2f/90/7c2f90d7575d336c16d9063249b5dce6.png" />
+<a href="https://www.youtube.com/watch?v=uXumm52oBMo">Udacity course</a></p>
+<h4 id="secondary-goals">Secondary goals</h4>
+<ul>
+<li>Survivability in the face of failure:<ul>
+<li>Replication</li>
+<li>Fate-sharing - acceptable to lose state information of an entity if the entity itself is lost. Eg., Routing tables lost when a router crashes</li>
+</ul>
+</li>
+<li>Heterogenity<ul>
+<li>achieved through TCP/IP<ul>
+<li>TCP provided flow control and reliability though some usecases didn't need it. Eg., streaming (voice/video), DNS resolution</li>
+<li>TCP works on best effort which makes debugging hard</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Distributed Management<ul>
+<li>Addressing (ARIN, RIPE, etc)</li>
+<li>Naming (DNS) </li>
+<li>Routing (BGP)</li>
+</ul>
+</li>
+</ul>
+<h4 id="end-to-end-argument">End-to-End Argument</h4>
+<p><a href="https://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf">source</a></p>
+<p>Summary: <strong>Dumb network and intelligent endpoints</strong> </p>
+<p>Eg., Violation NAT which maintains a map of device ip and port on private network to the static public ip and port</p>
+<h3 id="switching-bridging">Switching &amp; Bridging</h3>
+<h4 id="host-hosts-find-each-other-on-the-network">Host hosts find each other on the network</h4>
+<p>Each <code>Network Adapter</code> has a MAC address and a computer can send a Ethernet datagram to another computer if it knows the recipient's MAC address. But in reality only DNS name or IP of the destination machine is known.</p>
+<p><strong>ARP protocol</strong></p>
+<ul>
+<li>Broadcast asking for IP. </li>
+<li>Receive a unicast with MAC address </li>
+<li>Build a table of IP to MAC address </li>
+</ul>
+<p>Hub : Broadcast
+Switch: Do traffic isolation</p>
+<p>Learning Switch</p>
+<ul>
+<li>Floods the network when there is no mapping. Otherwise, send to the correct port.</li>
+</ul>
+<p>Loop and Broadcast Storms</p>
+<h3 id="routing">Routing</h3>
+<p>Types:
+* Intradomain
+* Interdomain</p>
+<p>Different Autonomous Systems (AS):
+* ISPs
+* Service providers (Google, etc)
+* Standalone institutions (Universities)</p>
+<p>Node = PoPs (Points of Presence) usually located in densely populated centers
+Edges have fiber paths which are closer to major transportational routes</p>
+<h4 id="intradomain-routing">Intradomain routing</h4>
+<h5 id="distance-vector-routing">Distance-Vector routing</h5>
+<p>Uses Bellmann-Ford algorithm</p>
 <hr />
-<p><strong>References</strong></p>
+<p><strong>References</strong>:</p>
 <ul>
-<li><a href="http://shop.oreilly.com/product/0636920028048.do">High Performance Browser Networking - Oreilly</a> (book)</li>
-<li><a href="http://shop.oreilly.com/product/9780596529307.do">High Performance websites - Oreilly</a> (book)</li>
-<li><a href="https://www.youtube.com/watch?v=aqvz5Oqs238">Building Fast &amp; Resilient Web Applications - Ilya Grigorik</a>(video)</li>
+<li><a href="https://hpbn.co/building-blocks-of-tcp/"></a></li>
 </ul>
                 
               
@@ -503,28 +867,14 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="http2.html" title="HTTP/2" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                HTTP/2
-              </div>
-            </div>
-          </a>
         
-        
-          <a href="../sdi/numbers.html" title="Useful numbers" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="fallacies.html" title="Fallacies of Distributed Computing" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Useful numbers
+                Fallacies of Distributed Computing
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

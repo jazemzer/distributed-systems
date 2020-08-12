@@ -15,7 +15,7 @@
     
     
       
-        <title>Website Performance - Distributed System Design</title>
+        <title>Glossary - Distributed System Design</title>
       
     
     
@@ -52,11 +52,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#website-performance" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +76,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Website Performance
+              Glossary
             
           </span>
         </div>
@@ -153,12 +148,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
     
     <label class="md-nav__link" for="nav-1">
       Fundamental Concepts
@@ -228,60 +221,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Website Performance
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="web-perf.html" title="Website Performance" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="web-perf.html" title="Website Performance" class="md-nav__link">
       Website Performance
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices-of-web-performance" class="md-nav__link">
-    Best practices of Web performance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anitpatterns-with-http2" class="md-nav__link">
-    Anitpatterns with HTTP/2
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -381,45 +325,6 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices-of-web-performance" class="md-nav__link">
-    Best practices of Web performance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anitpatterns-with-http2" class="md-nav__link">
-    Anitpatterns with HTTP/2
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -429,62 +334,9 @@
                   
                 
                 
-                <h1 id="website-performance">Website Performance</h1>
-<h2 id="best-practices-of-web-performance">Best practices of Web performance</h2>
-<ul>
-<li>Optimize DNS Lookups<ul>
-<li>Limit the number of unique domain names</li>
-<li>Ensure low DNS resolution latencies</li>
-<li>Leverage <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/dns-prefetch">DNS pre-fetch</a></li>
-</ul>
-</li>
-<li>Optimie TCP connections<ul>
-<li>Leverage <a href="https://www.keycdn.com/support/preconnect">Preconnect</a> which sets up early connections before an HTTP request is actually sent to the server</li>
-<li>Use a CDN closer to user. This indirectly reduces the RTT for the TCP connection</li>
-<li>Implement latest <a href="https://istlsfastyet.com/">TLS best practices</a></li>
-<li>Avoid Redirects - that usually causes connection to new hostnames</li>
-</ul>
-</li>
-<li>Cache on client - TTL<ul>
-<li>Cache images forever</li>
-<li>CSS/JS - cache for twice the median session time so it is relatively fresh</li>
-</ul>
-</li>
-<li>Use conditional caching<ul>
-<li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETag</a> that uniquely identifies the object so server can return HTTP 304 if it is requested again</li>
-<li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since">If-modified-since</a> in http request so server can return HTTP 304</li>
-</ul>
-</li>
-<li>Compression and Minification<ul>
-<li>All text content (Html,JS,CSS,Json) benefit from compresison - gzip, deflate</li>
-</ul>
-</li>
-<li>Avoid Blocking CSS/JS<ul>
-<li>Add all the CSS elements in the head section</li>
-<li>Use 'async' attribute for JS than be downloaded parallely while HTML is being parsed but before the DOM is loaded</li>
-<li>Use 'defer' attribute for JS that can be run after DOM is loaded</li>
-</ul>
-</li>
-<li>Optimize Images<ul>
-<li>Remove metadata like location, timestamp, image dimension, resolution </li>
-<li>Scaling images for different viewport</li>
-</ul>
-</li>
-</ul>
-<h2 id="anitpatterns-with-http2">Anitpatterns with HTTP/2</h2>
-<ul>
-<li>Domain Sharding as that creates multiple TCP connections </li>
-<li>CSS Spriting</li>
-<li>Concatenation of files</li>
-<li><a href="https://hpbn.co/http1x/#resource-inlining">Inlining</a> </li>
-</ul>
-<hr />
-<p><strong>References</strong></p>
-<ul>
-<li><a href="http://shop.oreilly.com/product/0636920028048.do">High Performance Browser Networking - Oreilly</a> (book)</li>
-<li><a href="http://shop.oreilly.com/product/9780596529307.do">High Performance websites - Oreilly</a> (book)</li>
-<li><a href="https://www.youtube.com/watch?v=aqvz5Oqs238">Building Fast &amp; Resilient Web Applications - Ilya Grigorik</a>(video)</li>
-</ul>
+                  <h1>Glossary</h1>
+                
+                
                 
               
               
@@ -499,41 +351,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="http2.html" title="HTTP/2" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                HTTP/2
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../sdi/numbers.html" title="Useful numbers" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Useful numbers
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
