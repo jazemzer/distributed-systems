@@ -40,7 +40,9 @@ Average Web page size is 2MB with an average of 100 objects
 
 Blink of an eye = 300-400 milli secs. Google study says that much delay causes people to search less
 
-Size of a data packet = 14bytes
+Size of a data packet = 1.5Kb
+IpV4 address - 32 bits = \~4 billion addresses
+
 
 ---
 
