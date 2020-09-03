@@ -10,7 +10,7 @@
 * **Indexes** for searching and filtering stored data
 * **Offline processing** for crunching accumulated data or async operations
 
-## Three important concerns 
+### Three important concerns 
 
 * **Reliability** - Can the system gracefully handle hardware/software faults and human errors? This is about being fault-tolerant or resilient
 * **Scalability** - Can the system keep up good performance with increased load (either in traffic or data volume)?
@@ -19,7 +19,7 @@
 
 ### Reliability
 
-**Fault vs Failure ** - In a complex system, fault is when one of the components deviates from the specification. Whereas, failure is when the system as a whole stops working. 
+**Fault vs Failure ** - In a complex system, fault is when one of the components deviates from the specification. Whereas, failure is when the system as a whole stops working.
 
 #### Types of Faults
 * Hardware faults
@@ -66,7 +66,7 @@
 		* Response time in percentiles
 * Approaches for coping with load
 	* Estimate and design for future growth
-	* Choose wisely between scaling-up and scaling-out as there is not secret 'magic scaling sauce'
+	* Choose wisely between scaling-up and scaling-out as there is no secret 'magic scaling sauce'
 
 
 ### Maintainability
@@ -78,6 +78,34 @@
 	* Evolvability - Make it easy to make future changes - Extensibility or Plasticity
 
 
-Fault vs Failure
-Tail latencies
-Head-of-line blocking
+## Encoding and Evolution
+
+Json 
+
+* cannot distinguish integer and floating-point numbers and there is no precision
+* doesn't support binary strings - sequence of bytes without any encoding
+
+ Binary encodings of Json - MessagePack, BSON, BJSON, UBJSON, BISON, and Smile, to name a few
+
+ What is the space saved for ProtoBuf compared to Json
+
+
+Document databases 
+* Doesn't nicely handle one-to-many information because you cannot do joins in db but have to do in application layer
+* Schema flexibility due to storage locality
+
+Network model - one record could have multiple parents - to represent both one-to-many and many-to-many relationships
+
+
+Schema-on-read vs schema-on-write
+	* 1 is advantageous when the schema is changing
+
+
+
+Locality in Spanner, Oracle (Multi table  index cluster tables), Bigtable data model
+
+Document reference in MongoDB
+Mongodb offers MapReduce
+Triple stores
+
+
