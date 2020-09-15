@@ -15,7 +15,7 @@
     
     
       
-        <title>Glossary - Distributed System Design</title>
+        <title>WebApp 101 - Distributed System Design</title>
       
     
     
@@ -52,6 +52,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#webapp-101" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -76,7 +81,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Glossary
+              WebApp 101
             
           </span>
         </div>
@@ -355,6 +360,108 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#difference-between-n-tier-and-n-layer" class="md-nav__link">
+    Difference between n-tier and n-layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-different-http-push-mechanisms" class="md-nav__link">
+    5 different HTTP push mechanisms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-scalability" class="md-nav__link">
+    What is Scalability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability-bottlenecks" class="md-nav__link">
+    Scalability Bottlenecks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ha" class="md-nav__link">
+    What is HA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-achieve-ha" class="md-nav__link">
+    How to achieve HA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-load-balancing" class="md-nav__link">
+    Types of Load balancing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-load-balancing-algorithms" class="md-nav__link">
+    Different load balancing algorithms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-databases" class="md-nav__link">
+    Types of Databases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-strategies" class="md-nav__link">
+    Caching Strategies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -364,11 +471,118 @@
                   
                 
                 
-                  <h1>Glossary</h1>
-                
-                <p>Tail latencies
-Head-of-line blocking
-Polyglot persistence</p>
+                <h1 id="webapp-101">WebApp 101</h1>
+<h3 id="difference-between-n-tier-and-n-layer">Difference between n-tier and n-layer</h3>
+<p>Tier - physical separation at the component level and not at the code level</p>
+<h3 id="5-different-http-push-mechanisms">5 different HTTP push mechanisms</h3>
+<ul>
+<li>Ajax long polling</li>
+<li>Web Sockets <ul>
+<li>bi-directional</li>
+<li>chat, browser games, social streams</li>
+</ul>
+</li>
+<li>HTML5 Event Source API (frontend) &amp; Server sent events (backend)<ul>
+<li>uni-directional</li>
+<li>realtime feeds - twitter, etc</li>
+</ul>
+</li>
+<li>HTML5 Streaming API<ul>
+<li>chunked video streaming</li>
+</ul>
+</li>
+<li>Message queues</li>
+</ul>
+<h3 id="what-is-scalability">What is Scalability</h3>
+<p>Ability to handle increased workload without sacrificing latency</p>
+<h3 id="scalability-bottlenecks">Scalability Bottlenecks</h3>
+<ul>
+<li>Scaling DB </li>
+<li>Absence of Asynchronocity</li>
+<li>Not using Caching (wisely)</li>
+<li>Incorrect setup of Load balancers</li>
+<li>Code-level issues</li>
+</ul>
+<h3 id="what-is-ha">What is HA</h3>
+<p>High availability (HA) is the ability of the system to stay online despite having failures at the infrastructural level in real-time.</p>
+<p>Reasons:</p>
+<ul>
+<li>Hardware</li>
+<li>Software</li>
+<li>Human errors</li>
+</ul>
+<h3 id="how-to-achieve-ha">How to achieve HA</h3>
+<ul>
+<li>Redundancy - Active Passive HA mode<ul>
+<li>Redundancy is duplicating the components or instances &amp; keeping them on standby to take over in case the active instances go down. It’s the fail-safe, backup mechanism.</li>
+</ul>
+</li>
+<li>Replication - Active Active HA mode<ul>
+<li>Replication means having a number of similar nodes running the workload together. There are no standby or passive instances. </li>
+</ul>
+</li>
+</ul>
+<h3 id="types-of-load-balancing">Types of Load balancing</h3>
+<ul>
+<li>DNS load balancing<ul>
+<li>DNS load balancing enables the authoritative server to return different IP addresses of a certain domain to the clients. Every time it receives a query for an IP, it returns a list of IP addresses of a domain to the client.</li>
+</ul>
+</li>
+<li>Hardware</li>
+<li>Software<ul>
+<li>HAproxy</li>
+</ul>
+</li>
+</ul>
+<h3 id="different-load-balancing-algorithms">Different load balancing algorithms</h3>
+<ul>
+<li>(Weighted) Round-robin</li>
+<li>Least connections</li>
+<li>Random</li>
+<li>Hash</li>
+</ul>
+<h3 id="types-of-databases">Types of Databases</h3>
+<ul>
+<li>Document-oriented<ul>
+<li>Product catalogue</li>
+<li>News feed</li>
+<li>Web based games</li>
+</ul>
+</li>
+<li>Graph</li>
+<li>Key value</li>
+<li>Wide column</li>
+<li>Time series</li>
+<li>Relational    </li>
+</ul>
+<h3 id="caching-strategies">Caching Strategies</h3>
+<ul>
+<li>Cache aside<ul>
+<li>Data loaded lazily</li>
+<li>Suitable for read-heavy loads</li>
+</ul>
+</li>
+<li>Read through<ul>
+<li>Similar to cache-aside but cache is always consistent with database</li>
+</ul>
+</li>
+<li>Write through<ul>
+<li>Write to cache before DB </li>
+<li>Small latency overhead</li>
+</ul>
+</li>
+<li>Write back<ul>
+<li>Data only written to cache </li>
+<li>After a delay, it is written to db in bulk</li>
+</ul>
+</li>
+</ul>
+<h3 id="todo">TODO</h3>
+<ul>
+<li>HTML5 Event Source API (frontend) &amp; Server sent events (backend)</li>
+<li>HTML5 Streaming API</li>
+<li>HA Clustering</li>
+</ul>
                 
               
               
